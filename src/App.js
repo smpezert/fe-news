@@ -3,7 +3,8 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./componets/Header";
 import Home from "./componets/Home";
-import Article from "./componets/Article";
+import ArticlePage from "./componets/ArticlePage";
+import User from "./componets/User";
 
 function App() {
   return (
@@ -11,10 +12,12 @@ function App() {
       <div className="App">
         <header className="App-header">
           <Header />
+          <User />
         </header>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/articles/:article_id" element={<Article />} />
+          <Route path="/articles" element={<Home />} />
+          <Route path="/articles/:article_id" element={<ArticlePage />} />
         </Routes>
       </div>
     </BrowserRouter>
