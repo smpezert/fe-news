@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import SingleArticle from "./SingleArticle";
 import Votes from "./Votes";
 import Comments from "./Comments";

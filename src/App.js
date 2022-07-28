@@ -26,8 +26,8 @@ function App() {
         <div className="App">
           <header className="App-header">
             <Header />
-            <Navbar />
             <Profile />
+            <Navbar />
           </header>
           <Routes>
             <Route path="/" element={<Homepage />} />

@@ -8,27 +8,43 @@
   text-align: center;
 }
 
-.nav-links{
+.navbar {
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  align-content: space-between;
+  align-items: space-between;
+}
+
+.nav-links {
+  padding-left: 1rem;
+}
+
+h1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .profile{
   margin: 0.8rem 0 0.8rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: flex-end;
 }
 
 .profile-photo {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
+  padding: 0.3rem 0.2rem 0.3rem 0.2rem;
 }
 
 body {
   background-color: rgb(248, 231, 219);
 }
 
-h1 {
+header {
   background-color: orangered;
   padding: 1.5rem;
 }
@@ -46,19 +62,6 @@ h2, h3, h4 {
   font-size: 1rem;
   margin: 1rem;
 }
-
-/* #searchedArticle {
-  padding: 0.4rem 2rem 0.4rem 0.2rem;
-  width: 13rem;
-  font-size: 1rem;
-  margin-right: 0.5rem;
-}
-
-#articles-search-button {
-  padding: 0.4rem 2rem 0.4rem 0.2rem;
-  width: 5rem;
-  font-size: 1rem;
-} */
 
 .article-card {
   margin:1rem;
