@@ -8,7 +8,23 @@
   text-align: center;
 }
 
-body{
+.nav-links{
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+}
+
+.profile{
+  margin: 0.8rem 0 0.8rem 0;
+}
+
+.profile-photo {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+body {
   background-color: rgb(248, 231, 219);
 }
 
@@ -17,41 +33,47 @@ h1 {
   padding: 1.5rem;
 }
 
-.title {
-  /* font-shadow: 1px 1px 1px rgb(255, 132, 0); */
+h2 {
+  text-shadow: 0.1rem 0.1rem 0.3rem rgb(94, 92, 92);
 }
 
-.articles-search-form {
-  
+.title {
+  text-shadow: 0.1rem 0.1rem 0.3rem rgb(94, 92, 92);
+  color: black;
+}
+
+.articles-list {
   font-size: 1rem;
   margin: 1rem;
 }
 
-#searchedArticle {
-  padding: 0.8rem 2rem 0.8rem 0.2rem;
+/* #searchedArticle {
+  padding: 0.4rem 2rem 0.4rem 0.2rem;
   width: 13rem;
   font-size: 1rem;
   margin-right: 0.5rem;
 }
 
 #articles-search-button {
-  padding: 0.8rem 2rem 0.8rem 0.2rem;
+  padding: 0.4rem 2rem 0.4rem 0.2rem;
   width: 5rem;
   font-size: 1rem;
-}
+} */
 
-.articles-list {
+.article-card {
   margin:1rem;
   background-color: orange;
   list-style: none;
-}
-
-.article-card {
-  list-style: none;
-  margin: 1rem 0rem 1rem 0rem;
+  border-radius: 0.5rem;
+  display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    list-style: none;
+      margin: 1rem 0rem 1rem 0rem;
+      padding: 0.2rem 0.5rem 0.2rem 0.5rem;
 }
 
 #article-title {
   text-decoration: none;
-    color: inherit;
+  color: inherit;
 }
