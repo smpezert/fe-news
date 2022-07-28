@@ -4,7 +4,7 @@ export default function SingleArticle({ singleArticle }) {
       <h3>
         {singleArticle.title} - {singleArticle.topic}
       </h3>
-      <h4>by {singleArticle.author}</h4>
+      <h5>by {singleArticle.author}</h5>
       <p>{singleArticle.body}</p>
       <ul className="single-articlePage-list">
         <li>
@@ -12,8 +12,6 @@ export default function SingleArticle({ singleArticle }) {
           {singleArticle.created_at.slice(0, 10).split("-").reverse().join("-")}
         </li>
         <li>{singleArticle.votes} votes</li>
-        {/* <Comments />
-        <Link to="/comments" /> */}
         <li>{singleArticle.comment_count} comments</li>
       </ul>
     </div>

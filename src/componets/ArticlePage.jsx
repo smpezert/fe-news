@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import Comments from "./Comments";
 import SingleArticle from "./SingleArticle";
+import Votes from "./Votes";
+import Comments from "./Comments";
 
 export default function ArticlePage() {
   const { article_id } = useParams();
@@ -22,5 +23,11 @@ export default function ArticlePage() {
   if (isLoading) {
     return <p>Loading...</p>;
   }
-  return <SingleArticle singleArticle={singleArticle} />;
+  return (
+    <div>
+      <SingleArticle singleArticle={singleArticle} />
+      <Votes singleArticle={singleArticle} />
+      <Comments singleArticle={singleArticle} />
+    </div>
+  );
 }

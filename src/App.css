@@ -33,7 +33,7 @@ h1 {
   padding: 1.5rem;
 }
 
-h2 {
+h2, h3, h4 {
   text-shadow: 0.1rem 0.1rem 0.3rem rgb(94, 92, 92);
 }
 
@@ -66,14 +66,25 @@ h2 {
   list-style: none;
   border-radius: 0.5rem;
   display: flex;
-    flex-direction: column;
-    align-content: flex-start;
-    list-style: none;
-      margin: 1rem 0rem 1rem 0rem;
-      padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+  flex-direction: column;
+  align-content: flex-start;
+  list-style: none;
+  margin: 1rem 0rem 1rem 0rem;
+  padding: 0.2rem 0.5rem 0.2rem 0.5rem;
 }
 
 #article-title {
   text-decoration: none;
   color: inherit;
+}
+
+.comment-card {
+  margin:1rem;
+  background-color: orange;
+  list-style: none;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
