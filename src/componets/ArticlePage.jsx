@@ -13,7 +13,6 @@ export default function ArticlePage() {
     fetch(`https://sobe-news.herokuapp.com/api/articles/${article_id}`)
       .then((res) => res.json())
       .then((article) => {
-        console.log(article);
         setSingleArticle(article);
         setIsLoading(false);
       });
@@ -24,7 +23,6 @@ export default function ArticlePage() {
   }
   return (
     <div className="single-article">
-      {isLoading && <div>Loading...</div>}
       <h3>
         {singleArticle.title} - {singleArticle.topic}
       </h3>
