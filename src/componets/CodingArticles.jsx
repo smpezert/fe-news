@@ -20,8 +20,8 @@ export default function CodingArticles() {
     return <p>Loading...</p>;
   }
   return (
-    <div className="coding-articles-list">
-      <h2 className="coding-articles-header">Articles for coding</h2>
+    <div className="articles-list">
+      <h2 className="articles-header">Articles for coding</h2>
       {codingArticles.map((article) => {
         return <ArticleCard article={article} key={article.article_id} />;
       })}

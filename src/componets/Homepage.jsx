@@ -20,7 +20,7 @@ export default function Homepage() {
     return <p>Loading...</p>;
   }
   return (
-    <div className="all-articles">
+    <div className="articles-list">
       <h2 className="articles-header">Articles</h2>
       {articles.map((article) => {
         return <ArticleCard article={article} key={article.article_id} />;
