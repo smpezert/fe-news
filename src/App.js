@@ -1,25 +1,42 @@
 import "./App.css";
-// import { useState } from "react";
+import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { User } from "./contexts/User";
 import Header from "./componets/Header";
-import Home from "./componets/Home";
+import Navbar from "./componets/Navbar";
+import Profile from "./componets/Profile";
+import Homepage from "./componets/Homepage";
+import CodingArticles from "./componets/CodingArticles";
+import CookingArticles from "./componets/CookingArticles";
+import FootballArticles from "./componets/FootballArticles";
 import ArticlePage from "./componets/ArticlePage";
-import User from "./componets/User";
 
 function App() {
+  const [user, setUser] = useState({
+    username: "tickle122",
+    name: "Tom Tickle",
+    avatar_url:
+      "https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953",
+  });
+
   return (
     <BrowserRouter>
-      <div className="App">
-        <header className="App-header">
-          <Header />
-          <User />
-        </header>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/articles" element={<Home />} />
-          <Route path="/articles/:article_id" element={<ArticlePage />} />
-        </Routes>
-      </div>
+      <User.Provider value={{ user, setUser }}>
+        <div className="App">
+          <header className="App-header">
+            <Header />
+            <Navbar />
+            <Profile />
+          </header>
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/topics/coding" element={<CodingArticles />} />
+            <Route path="/topics/cooking" element={<CookingArticles />} />
+            <Route path="/topics/football" element={<FootballArticles />} />
+            <Route path="/articles/:article_id" element={<ArticlePage />} />
+          </Routes>
+        </div>
+      </User.Provider>
     </BrowserRouter>
   );
 }
