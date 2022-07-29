@@ -10,6 +10,7 @@ import CodingArticles from "./componets/CodingArticles";
 import CookingArticles from "./componets/CookingArticles";
 import FootballArticles from "./componets/FootballArticles";
 import ArticlePage from "./componets/ArticlePage";
+import Comments from "./componets/Comments";
 
 function App() {
   const [user, setUser] = useState({
@@ -25,8 +26,8 @@ function App() {
         <div className="App">
           <header className="App-header">
             <Header />
-            <Navbar />
             <Profile />
+            <Navbar />
           </header>
           <Routes>
             <Route path="/" element={<Homepage />} />
@@ -34,6 +35,10 @@ function App() {
             <Route path="/topics/cooking" element={<CookingArticles />} />
             <Route path="/topics/football" element={<FootballArticles />} />
             <Route path="/articles/:article_id" element={<ArticlePage />} />
+            <Route
+              path="/articles/:article_id/comments"
+              element={<Comments />}
+            />
           </Routes>
         </div>
       </User.Provider>
