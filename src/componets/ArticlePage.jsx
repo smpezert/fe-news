@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import SingleArticle from "./SingleArticle";
 import Votes from "./Votes";
 import Comments from "./Comments";
+import AddComment from "./AddComment";
 
 export default function ArticlePage() {
   const { article_id } = useParams();
@@ -28,6 +29,7 @@ export default function ArticlePage() {
       <SingleArticle singleArticle={singleArticle} />
       <Votes singleArticle={singleArticle} />
       <Comments singleArticle={singleArticle} />
+      <AddComment singleArticle={singleArticle} />
     </div>
   );
 }
