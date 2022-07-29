@@ -11,8 +11,8 @@ export default function SingleArticle({ singleArticle }) {
           created at{" "}
           {singleArticle.created_at.slice(0, 10).split("-").reverse().join("-")}
         </li>
-        <li>{singleArticle.votes} votes</li>
         <li>{singleArticle.comment_count} comments</li>
+        <li>{singleArticle.votes} votes</li>
       </ul>
     </div>
   );

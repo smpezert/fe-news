@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 
 export default function UpVoting({ singleArticle }) {
   const [newVote, setNewVote] = useState(singleArticle.votes);
@@ -6,27 +7,45 @@ export default function UpVoting({ singleArticle }) {
 
   function handleClick() {
     setHasVoted(false);
-    fetch(
-      `https://sobe-news.herokuapp.com/api/articles/${singleArticle.article_id}`
-    )
-      .then((res) => res.json())
+    setNewVote(newVote + 1);
+    axios
+      .patch(
+        `https://sobe-news.herokuapp.com/api/articles/${singleArticle.article_id}`,
+        { inc_votes: 1 }
+      )
       .then(() => {
-        setNewVote(newVote + 1);
-      }, [singleArticle.article_id]);
-    setHasVoted(true);
+        setNewVote(newVote);
+        setHasVoted(true);
+      });
   }
+
+  // const voteHandler = () => {
+  //   setNewVotes(newVotes + 1);
+  //   setDisabled(true);
+  //   setErr(null);
+  //   axios
+  //     .patch(`https://schaxmann-news.herokuapp.com/api/articles/${article}`, {
+  //       inc_votes: 1,
+  //     })
+  //     .then(() => {
+  //       setDisabled(false);
+  //     })
+  //     .catch(() => {
+  //       setNewVotes(newVotes);
+  //       setErr("Something went wrong, please try again later.");
+  //       setDisabled(false);
+  //     });
+  // };
 
   if (hasVoted) {
     return (
       <div>
-        <p>{newVote}</p>
         <p>Thank you for your vote!</p>
       </div>
     );
   }
   return (
     <div>
-      <p>{newVote}</p>
       <button onClick={handleClick} id="voting-button">
         vote
       </button>
