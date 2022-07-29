@@ -19,24 +19,6 @@ export default function UpVoting({ singleArticle }) {
       });
   }
 
-  // const voteHandler = () => {
-  //   setNewVotes(newVotes + 1);
-  //   setDisabled(true);
-  //   setErr(null);
-  //   axios
-  //     .patch(`https://schaxmann-news.herokuapp.com/api/articles/${article}`, {
-  //       inc_votes: 1,
-  //     })
-  //     .then(() => {
-  //       setDisabled(false);
-  //     })
-  //     .catch(() => {
-  //       setNewVotes(newVotes);
-  //       setErr("Something went wrong, please try again later.");
-  //       setDisabled(false);
-  //     });
-  // };
-
   if (hasVoted) {
     return (
       <div>
