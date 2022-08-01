@@ -11,9 +11,11 @@ export default function ArticleCard({ article }) {
         <li>{article.body.slice(0, 150) + "... Read more"}</li>
         <li>by {article.author} </li>
         <li>
-          created at
+          created at{" "}
           {article.created_at.slice(0, 10).split("-").reverse().join("-")}
         </li>
+        <li>{article.comment_count} comments</li>
+        <li>{article.votes} votes</li>
       </ul>
     </div>
   );
