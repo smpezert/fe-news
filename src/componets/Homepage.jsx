@@ -1,4 +1,6 @@
+import axios from "axios";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import ArticleCard from "./ArticleCard";
 import SortArticles from "./SortArticles";
 
@@ -7,38 +9,24 @@ export default function Homepage() {
   const [isLoading, setIsLoading] = useState(true);
   const [articleFilter, setArticleFilter] = useState(null);
   const [articleOrder, setArticleOrder] = useState(null);
+  const { topic } = useParams();
 
   useEffect(() => {
     setIsLoading(true);
-    let url = [];
 
-    if (!articleFilter && !articleOrder) {
-      url.shift();
-      url.push("/");
-    }
-
-    if (articleFilter && !articleOrder) {
-      url.shift();
-      url.push(`/?sort_by=${articleFilter}`);
-    }
-
-    if (!articleFilter && articleOrder) {
-      url.shift();
-      url.push(`/?order_by=${articleOrder}`);
-    }
-
-    if (articleFilter && articleOrder) {
-      url.shift();
-      url.push(`/?sort_by=${articleFilter}&order_by=${articleOrder}`);
-    }
-
-    fetch(`https://sobe-news.herokuapp.com/api/articles${url}`)
-      .then((res) => res.json())
-      .then(({ articles }) => {
-        setArticles(articles);
+    axios
+      .get(`https://sobe-news.herokuapp.com/api/articles`, {
+        params: {
+          topic: topic,
+          sort_by: articleFilter,
+          order_by: articleOrder,
+        },
+      })
+      .then((res) => {
+        setArticles(res.data.articles);
         setIsLoading(false);
       });
-  }, [articleFilter, articleOrder]);
+  }, [topic, articleFilter, articleOrder]);
 
   if (isLoading) {
     return <p>Loading...</p>;

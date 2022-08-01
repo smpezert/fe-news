@@ -1,6 +1,6 @@
 export default function SingleArticle({ singleArticle }) {
   return (
-    <div className="single-article">
+    <article className="single-article">
       <h3>
         {singleArticle.title} - {singleArticle.topic}
       </h3>
@@ -14,6 +14,6 @@ export default function SingleArticle({ singleArticle }) {
         <li>{singleArticle.comment_count} comments</li>
         <li>{singleArticle.votes} votes</li>
       </ul>
-    </div>
+    </article>
   );
 }

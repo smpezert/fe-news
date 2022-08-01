@@ -6,9 +6,6 @@ import Header from "./componets/Header";
 import Navbar from "./componets/Navbar";
 import Profile from "./componets/Profile";
 import Homepage from "./componets/Homepage";
-import CodingArticles from "./componets/CodingArticles";
-import CookingArticles from "./componets/CookingArticles";
-import FootballArticles from "./componets/FootballArticles";
 import ArticlePage from "./componets/ArticlePage";
 import Comments from "./componets/Comments";
 
@@ -31,9 +28,7 @@ function App() {
           </header>
           <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route path="/topics/coding" element={<CodingArticles />} />
-            <Route path="/topics/cooking" element={<CookingArticles />} />
-            <Route path="/topics/football" element={<FootballArticles />} />
+            <Route path="/topics/:topic" element={<Homepage />} />
             <Route path="/articles/:article_id" element={<ArticlePage />} />
             <Route
               path="/articles/:article_id/comments"
