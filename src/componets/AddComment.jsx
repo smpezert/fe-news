@@ -47,6 +47,7 @@ export default function AddComment({ singleArticle }) {
             type="text"
             name="new-comment"
             id="new-comment"
+            required
           ></input>
         </label>
         <button type="submit" id="add-comment-button">
