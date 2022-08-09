@@ -27,11 +27,9 @@ export default function Comments({ singleArticle }) {
     return (
       <div className="single-articles-comments">
         <h4 className="comments-header">Comments</h4>
-        {allComments
-          .map((comment) => {
-            return <Comment comment={comment} key={comment.comment_id} />;
-          })
-          .reverse()}
+        {allComments.map((comment) => {
+          return <Comment comment={comment} key={comment.comment_id} />;
+        })}
       </div>
     );
 }
