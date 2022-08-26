@@ -5,7 +5,9 @@ export default function UpVoting({ singleArticle }) {
   const [newVote, setNewVote] = useState(singleArticle.votes);
   const [hasVoted, setHasVoted] = useState(false);
 
-  function handleClick() {
+  function handleClick(e) {
+    e.preventDefault();
+
     setHasVoted(false);
     setNewVote(newVote + 1);
     axios
